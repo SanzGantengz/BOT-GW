@@ -16,7 +16,7 @@ nocache('./msgHandler.js', module => console.log(`${module} is now updated!`))
 
 async function start() {
   client.on('qr', () => console.log('[❗] Scan code qr diatas'))
-  let authFile = './anu-bot.session.json'
+  let authFile = './BarBar.json'
   if (fs.existsSync(authFile)) client.loadAuthInfo(authFile)
   client.on('credentials-updated', fs.writeFileSync(authFile, JSON.stringify(client.base64EncodedAuthInfo(), null, 2)))
   await client.connect()
